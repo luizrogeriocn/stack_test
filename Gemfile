@@ -28,5 +28,6 @@ group :development, :test do
   gem "dotenv-rails"
   gem "pry-rails"
   gem 'rspec-rails'
+  gem 'shoulda-matchers', '~> 3.1'
 end
 
