@@ -11,6 +11,10 @@ module TwitterWrapper
       tweet.created_at
     end
 
+    def id
+      tweet.id
+    end
+
     def text
       TwitterWrapper::MessageParser.parse(message)
     end

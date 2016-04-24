@@ -17,7 +17,7 @@ module TwitterWrapper
 
     def parse_mentions
       @message.gsub!(/@([\w]+)/i) do |match|
-        "<a href='/?screen_name=#{match}'>#{match}</a>"
+        "<a href='/#{match.sub(/^@/, '')}'>#{match}</a>"
       end
       @message
     end
