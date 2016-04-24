@@ -1,0 +1,79 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.twitter.com/1.1/statuses/user_timeline.json?count=25&screen_name=ana_azedo
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - TwitterRubyGem/5.16.0
+      Authorization:
+      - OAuth oauth_consumer_key="yWIrXTA3c44lSlRLX2qXNPF8s", oauth_nonce="6504ed693a27230b351f2e473e49c4d4",
+        oauth_signature="SI9Seqg8otfAaTeZwYcYynqov%2Fk%3D", oauth_signature_method="HMAC-SHA1",
+        oauth_timestamp="1461450673", oauth_token="90389288-pCfVUt0q4FkunaFjAZKkZdXcHd0kJ5fICIVjx5t0K",
+        oauth_version="1.0"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store, must-revalidate, pre-check=0, post-check=0
+      Content-Disposition:
+      - attachment; filename=json.json
+      Content-Length:
+      - '28'
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Sat, 23 Apr 2016 22:31:12 GMT
+      Expires:
+      - Tue, 31 Mar 1981 05:00:00 GMT
+      Last-Modified:
+      - Sat, 23 Apr 2016 22:31:12 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - tsa_d
+      Set-Cookie:
+      - guest_id=v1%3A146145067218945323; Domain=.twitter.com; Path=/; Expires=Mon,
+        23-Apr-2018 22:31:12 UTC
+      - lang=pt; Path=/
+      Status:
+      - 200 OK
+      Strict-Transport-Security:
+      - max-age=631138519
+      X-Access-Level:
+      - read-write
+      X-Connection-Hash:
+      - 2ac8ceaf23c93e068765b7f47e5a24a9
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Rate-Limit-Limit:
+      - '180'
+      X-Rate-Limit-Remaining:
+      - '178'
+      X-Rate-Limit-Reset:
+      - '1461451571'
+      X-Response-Time:
+      - '155'
+      X-Transaction:
+      - c1005e26d2646b40
+      X-Twitter-Response-Tags:
+      - BouncerCompliant
+      X-Xss-Protection:
+      - 1; mode=block
+    body:
+      encoding: ASCII-8BIT
+      string: "[]"
+    http_version: 
+  recorded_at: Sat, 23 Apr 2016 22:31:13 GMT
+recorded_with: VCR 3.0.1

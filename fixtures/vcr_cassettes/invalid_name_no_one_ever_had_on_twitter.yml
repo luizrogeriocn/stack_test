@@ -1,0 +1,77 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.twitter.com/1.1/users/show.json?screen_name=invalid_name_no_one_ever_had_on_twitter
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - TwitterRubyGem/5.16.0
+      Authorization:
+      - OAuth oauth_consumer_key="yWIrXTA3c44lSlRLX2qXNPF8s", oauth_nonce="5c5450e02449a86ad2c9f7cce095f26a",
+        oauth_signature="ZIgb3jiUPGi8aC0YC7qJ4TPUsoI%3D", oauth_signature_method="HMAC-SHA1",
+        oauth_timestamp="1461452359", oauth_token="90389288-pCfVUt0q4FkunaFjAZKkZdXcHd0kJ5fICIVjx5t0K",
+        oauth_version="1.0"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Cache-Control:
+      - no-cache, no-store, must-revalidate, pre-check=0, post-check=0
+      Content-Disposition:
+      - attachment; filename=json.json
+      Content-Length:
+      - '77'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 23 Apr 2016 22:59:18 GMT
+      Expires:
+      - Tue, 31 Mar 1981 05:00:00 GMT
+      Last-Modified:
+      - Sat, 23 Apr 2016 22:59:18 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - tsa_d
+      Set-Cookie:
+      - guest_id=v1%3A146145235881478061; Domain=.twitter.com; Path=/; Expires=Mon,
+        23-Apr-2018 22:59:18 UTC
+      - lang=pt; Path=/
+      Status:
+      - 404 Not Found
+      Strict-Transport-Security:
+      - max-age=631138519
+      X-Connection-Hash:
+      - 07212e2391bc0f1ff9815671a5a18d5b
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Rate-Limit-Limit:
+      - '181'
+      X-Rate-Limit-Remaining:
+      - '180'
+      X-Rate-Limit-Reset:
+      - '1461453258'
+      X-Response-Time:
+      - '142'
+      X-Transaction:
+      - 221cafa6e72ac9b1
+      X-Twitter-Response-Tags:
+      - BouncerCompliant
+      X-Xss-Protection:
+      - 1; mode=block
+    body:
+      encoding: ASCII-8BIT
+      string: '{"errors":[{"code":50,"message":"User not found."}]}'
+    http_version: 
+  recorded_at: Sat, 23 Apr 2016 22:59:20 GMT
+recorded_with: VCR 3.0.1

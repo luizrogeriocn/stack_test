@@ -1,0 +1,84 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.twitter.com/1.1/users/show.json?screen_name=luizrogeriocn
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - TwitterRubyGem/5.16.0
+      Authorization:
+      - OAuth oauth_consumer_key="yWIrXTA3c44lSlRLX2qXNPF8s", oauth_nonce="4a481065dafd996cbd07fb5d7a314f10",
+        oauth_signature="vtJ9S5Ulyg5hH7urpjURJ%2BwkB9k%3D", oauth_signature_method="HMAC-SHA1",
+        oauth_timestamp="1461450671", oauth_token="90389288-pCfVUt0q4FkunaFjAZKkZdXcHd0kJ5fICIVjx5t0K",
+        oauth_version="1.0"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store, must-revalidate, pre-check=0, post-check=0
+      Content-Disposition:
+      - attachment; filename=json.json
+      Content-Length:
+      - '1009'
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Sat, 23 Apr 2016 22:31:10 GMT
+      Expires:
+      - Tue, 31 Mar 1981 05:00:00 GMT
+      Last-Modified:
+      - Sat, 23 Apr 2016 22:31:10 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - tsa_d
+      Set-Cookie:
+      - guest_id=v1%3A146145067069690141; Domain=.twitter.com; Path=/; Expires=Mon,
+        23-Apr-2018 22:31:10 UTC
+      - lang=pt; Path=/
+      Status:
+      - 200 OK
+      Strict-Transport-Security:
+      - max-age=631138519
+      X-Access-Level:
+      - read-write
+      X-Connection-Hash:
+      - b2e0a50415b438ecc23e54450fa24f1a
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Rate-Limit-Limit:
+      - '181'
+      X-Rate-Limit-Remaining:
+      - '176'
+      X-Rate-Limit-Reset:
+      - '1461451048'
+      X-Response-Time:
+      - '162'
+      X-Transaction:
+      - 559d9238c8352a2a
+      X-Twitter-Response-Tags:
+      - BouncerCompliant
+      X-Xss-Protection:
+      - 1; mode=block
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":90389288,"id_str":"90389288","name":"Luiz Rogerio","screen_name":"luizrogeriocn","location":"Brazil","profile_location":null,"description":"Software
+        engineering student. Always trying to learn something new, and always willing
+        to help others learn too!","url":"http:\/\/t.co\/rmsuWXAgD8","entities":{"url":{"urls":[{"url":"http:\/\/t.co\/rmsuWXAgD8","expanded_url":"http:\/\/luizrogeriocn.blogspot.com","display_url":"luizrogeriocn.blogspot.com","indices":[0,22]}]},"description":{"urls":[]}},"protected":false,"followers_count":83,"friends_count":179,"listed_count":2,"created_at":"Mon
+        Nov 16 13:08:09 +0000 2009","favourites_count":7,"utc_offset":null,"time_zone":null,"geo_enabled":false,"verified":false,"statuses_count":110,"lang":"pt","status":{"created_at":"Sat
+        Apr 23 01:33:50 +0000 2016","id":723686284712140800,"id_str":"723686284712140800","text":"&lt;script&gt;alert(''Hi'')&lt;\/script&gt;","entities":{"hashtags":[],"symbols":[],"user_mentions":[],"urls":[]},"truncated":false,"source":"\u003ca
+        href=\"http:\/\/twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c\/a\u003e","in_reply_to_status_id":null,"in_reply_to_status_id_str":null,"in_reply_to_user_id":null,"in_reply_to_user_id_str":null,"in_reply_to_screen_name":null,"geo":null,"coordinates":null,"place":null,"contributors":null,"is_quote_status":false,"retweet_count":0,"favorite_count":0,"favorited":false,"retweeted":false,"lang":"en"},"contributors_enabled":false,"is_translator":false,"is_translation_enabled":false,"profile_background_color":"131516","profile_background_image_url":"http:\/\/abs.twimg.com\/images\/themes\/theme14\/bg.gif","profile_background_image_url_https":"https:\/\/abs.twimg.com\/images\/themes\/theme14\/bg.gif","profile_background_tile":true,"profile_image_url":"http:\/\/pbs.twimg.com\/profile_images\/378800000769274542\/9d76686adea2e92f5d1f71ef39ef269a_normal.jpeg","profile_image_url_https":"https:\/\/pbs.twimg.com\/profile_images\/378800000769274542\/9d76686adea2e92f5d1f71ef39ef269a_normal.jpeg","profile_banner_url":"https:\/\/pbs.twimg.com\/profile_banners\/90389288\/1385024817","profile_link_color":"009999","profile_sidebar_border_color":"EEEEEE","profile_sidebar_fill_color":"EFEFEF","profile_text_color":"333333","profile_use_background_image":true,"has_extended_profile":false,"default_profile":false,"default_profile_image":false,"following":false,"follow_request_sent":false,"notifications":false,"suspended":false,"needs_phone_verification":false}'
+    http_version: 
+  recorded_at: Sat, 23 Apr 2016 22:31:12 GMT
+recorded_with: VCR 3.0.1

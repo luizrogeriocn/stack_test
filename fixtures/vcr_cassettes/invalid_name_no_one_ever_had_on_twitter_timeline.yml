@@ -1,0 +1,79 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.twitter.com/1.1/statuses/user_timeline.json?count=25&screen_name=invalid_name_no_one_ever_had_on_twitter
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - TwitterRubyGem/5.16.0
+      Authorization:
+      - OAuth oauth_consumer_key="yWIrXTA3c44lSlRLX2qXNPF8s", oauth_nonce="f3d1f8cb81c5cba6aaa110a936b14237",
+        oauth_signature="2eWMYuzOKrML5O4ECvrjcBXw8ik%3D", oauth_signature_method="HMAC-SHA1",
+        oauth_timestamp="1461452359", oauth_token="90389288-pCfVUt0q4FkunaFjAZKkZdXcHd0kJ5fICIVjx5t0K",
+        oauth_version="1.0"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Cache-Control:
+      - no-cache, no-store, must-revalidate, pre-check=0, post-check=0
+      Content-Disposition:
+      - attachment; filename=json.json
+      Content-Length:
+      - '93'
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Sat, 23 Apr 2016 22:59:18 GMT
+      Expires:
+      - Tue, 31 Mar 1981 05:00:00 GMT
+      Last-Modified:
+      - Sat, 23 Apr 2016 22:59:18 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - tsa_d
+      Set-Cookie:
+      - guest_id=v1%3A146145235840305288; Domain=.twitter.com; Path=/; Expires=Mon,
+        23-Apr-2018 22:59:18 UTC
+      - lang=pt; Path=/
+      Status:
+      - 404 Not Found
+      Strict-Transport-Security:
+      - max-age=631138519
+      X-Access-Level:
+      - read-write
+      X-Connection-Hash:
+      - fca984a0ef78c0bb2a5ae4001dc3f39f
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Rate-Limit-Limit:
+      - '180'
+      X-Rate-Limit-Remaining:
+      - '179'
+      X-Rate-Limit-Reset:
+      - '1461453258'
+      X-Response-Time:
+      - '139'
+      X-Transaction:
+      - 1e72b5dd96ac840a
+      X-Twitter-Response-Tags:
+      - BouncerCompliant
+      X-Xss-Protection:
+      - 1; mode=block
+    body:
+      encoding: ASCII-8BIT
+      string: '{"errors":[{"code":34,"message":"Sorry, that page does not exist."}]}'
+    http_version: 
+  recorded_at: Sat, 23 Apr 2016 22:59:19 GMT
+recorded_with: VCR 3.0.1

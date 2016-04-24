@@ -1,0 +1,80 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.twitter.com/1.1/users/show.json?screen_name=ana_azedo
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - TwitterRubyGem/5.16.0
+      Authorization:
+      - OAuth oauth_consumer_key="yWIrXTA3c44lSlRLX2qXNPF8s", oauth_nonce="9c281db1642fab7d12d20e4455ad8c52",
+        oauth_signature="JvHybBskvmnc8pbPr%2FPDl57X0%2FA%3D", oauth_signature_method="HMAC-SHA1",
+        oauth_timestamp="1461450672", oauth_token="90389288-pCfVUt0q4FkunaFjAZKkZdXcHd0kJ5fICIVjx5t0K",
+        oauth_version="1.0"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store, must-revalidate, pre-check=0, post-check=0
+      Content-Disposition:
+      - attachment; filename=json.json
+      Content-Length:
+      - '525'
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Sat, 23 Apr 2016 22:31:11 GMT
+      Expires:
+      - Tue, 31 Mar 1981 05:00:00 GMT
+      Last-Modified:
+      - Sat, 23 Apr 2016 22:31:11 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - tsa_d
+      Set-Cookie:
+      - guest_id=v1%3A146145067164096524; Domain=.twitter.com; Path=/; Expires=Mon,
+        23-Apr-2018 22:31:11 UTC
+      - lang=pt; Path=/
+      Status:
+      - 200 OK
+      Strict-Transport-Security:
+      - max-age=631138519
+      X-Access-Level:
+      - read-write
+      X-Connection-Hash:
+      - 9da0ba2f633c03c9629aec97f9ba5d51
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Rate-Limit-Limit:
+      - '181'
+      X-Rate-Limit-Remaining:
+      - '175'
+      X-Rate-Limit-Reset:
+      - '1461451048'
+      X-Response-Time:
+      - '254'
+      X-Transaction:
+      - 35a0f0f05935e257
+      X-Twitter-Response-Tags:
+      - BouncerCompliant
+      X-Xss-Protection:
+      - 1; mode=block
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":920196732,"id_str":"920196732","name":"Ana Beatriz Azevedo","screen_name":"ana_azedo","location":"","profile_location":null,"description":"","url":null,"entities":{"description":{"urls":[]}},"protected":false,"followers_count":13,"friends_count":4,"listed_count":0,"created_at":"Fri
+        Nov 02 02:04:30 +0000 2012","favourites_count":0,"utc_offset":null,"time_zone":null,"geo_enabled":false,"verified":false,"statuses_count":0,"lang":"pt","contributors_enabled":false,"is_translator":false,"is_translation_enabled":false,"profile_background_color":"C0DEED","profile_background_image_url":"http:\/\/abs.twimg.com\/images\/themes\/theme1\/bg.png","profile_background_image_url_https":"https:\/\/abs.twimg.com\/images\/themes\/theme1\/bg.png","profile_background_tile":false,"profile_image_url":"http:\/\/abs.twimg.com\/sticky\/default_profile_images\/default_profile_0_normal.png","profile_image_url_https":"https:\/\/abs.twimg.com\/sticky\/default_profile_images\/default_profile_0_normal.png","profile_link_color":"0084B4","profile_sidebar_border_color":"C0DEED","profile_sidebar_fill_color":"DDEEF6","profile_text_color":"333333","profile_use_background_image":true,"has_extended_profile":false,"default_profile":true,"default_profile_image":true,"following":true,"follow_request_sent":false,"notifications":false}'
+    http_version: 
+  recorded_at: Sat, 23 Apr 2016 22:31:13 GMT
+recorded_with: VCR 3.0.1
