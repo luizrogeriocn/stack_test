@@ -1,6 +1,9 @@
 class HomeController < ApplicationController
+  respond_to :html, :json
+  before_filter :user
+
   def index
-    @user = user
+    respond_with(@user)
   end
 
   private
@@ -10,7 +13,7 @@ class HomeController < ApplicationController
   end
 
   def user
-    Rails.cache.fetch("user_#{user_params}", expires_in: TwitterWrapper::Api::CACHE_EXPIRACY.call) do
+    @user = Rails.cache.fetch("user_#{user_params}", expires_in: TwitterWrapper::Api::CACHE_EXPIRACY.call) do
       TwitterWrapper::User.new(user: tweets.first.user, tweets: tweets)
     end
   end
@@ -20,6 +23,6 @@ class HomeController < ApplicationController
   end
 
   def user_params
-    params[:screen_name].sub(/^@/, '')
+    (params[:screen_name] || "stackcommerce").sub(/^@/, '')
   end
 end
