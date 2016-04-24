@@ -5,7 +5,8 @@
   $hover-tile-height: 15em;
   $base-spacing: 1.5em;
 
-  @include linear-gradient(to left, #24C6DC , #514A9D);
+  //@include linear-gradient(to left, #24C6DC , #514A9D);
+  background-color: beige;
   background-position: top;
   background-size: cover;
   border: 1px solid $base-border-color;
