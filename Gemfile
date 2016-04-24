@@ -17,6 +17,8 @@ gem 'neat'
 
 gem 'vcr'
 gem 'virtus'
+gem "responders"
+gem 'react-rails', '~> 1.6.0'
 
 gem 'sdoc', '~> 0.4.0', group: :doc
 
@@ -30,4 +32,3 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'shoulda-matchers', '~> 3.1'
 end
-
