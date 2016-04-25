@@ -12,12 +12,12 @@ var TweetBox = React.createClass({
       }.bind(this)
     });
   },
-  handleCommentSubmit: function(comment) {
+  handleSearch: function(screen_name) {
     $.ajax({
       url: '/',
       dataType: 'json',
       type: 'GET',
-      data: comment,
+      data: screen_name,
       success: function(data) {
         this.setState({data: data});
       }.bind(this),
@@ -35,7 +35,7 @@ var TweetBox = React.createClass({
   render: function() {
     return (
       <div>
-        <SearchForm onCommentSubmit={this.handleCommentSubmit} />
+        <SearchForm onCommentSubmit={this.handleSearch} />
         <UserInfo data={this.state.data}/>
         <TweetList data={this.state.data} />
       </div>

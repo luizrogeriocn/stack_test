@@ -6,11 +6,24 @@
 @import 'home/stats';
 @import 'home/hover_tile';
 
-section {
-  @include outer-container;
-  @include span-columns(6);
-  @include shift(3);
+$mobile: new-breakpoint(max-width 680px); $desktop: new-breakpoint(min-width 1280px);
 
+section {
   margin-bottom: 2em;
   margin-top: 2em;
+
+  @include outer-container;
+  @include span-columns(8);
+  @include shift(2);
+
+  @include media($desktop){
+    @include outer-container;
+    @include span-columns(6);
+    @include shift(3);
+  }
+
+  @include media($mobile) {
+    @include outer-container;
+    @include span-columns(12);
+  }
 }
