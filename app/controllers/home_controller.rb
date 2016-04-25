@@ -18,7 +18,7 @@ class HomeController < ApplicationController
         TwitterWrapper::User.new(user: fetch_user, tweets: fetch_tweets)
       rescue Twitter::Error::Unauthorized
         TwitterWrapper::User.new(user: fetch_user, tweets: [])
-      rescue Twitter::Error::NotFound
+      rescue Twitter::Error::NotFound, Twitter::Error::Forbidden
         TwitterWrapper::NullUser.new(user_params)
       end
     end

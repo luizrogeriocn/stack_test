@@ -19,6 +19,8 @@ var TweetBox = React.createClass({
       type: 'GET',
       data: screen_name,
       success: function(data) {
+        var path = '/'+screen_name.screen_name;
+        window.history.pushState("", "", path);
         this.setState({data: data});
       }.bind(this),
       error: function(xhr, status, err) {
