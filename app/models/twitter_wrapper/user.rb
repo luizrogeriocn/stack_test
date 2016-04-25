@@ -6,12 +6,12 @@ module TwitterWrapper
     attribute :tweets, Array[TwitterWrapper::Tweet]
     attribute :user, Twitter::User
 
-    def_delegators :user, :screen_name
-    def_delegators :user, :followers_count
-    def_delegators :user, :favourites_count
-    def_delegators :user, :tweets_count
-    def_delegators :user, :profile_image_url
-    def_delegators :user, :profile_banner_url
+    def_delegator :user, :screen_name
+    def_delegator :user, :followers_count
+    def_delegator :user, :favourites_count
+    def_delegator :user, :tweets_count
+    def_delegator :user, :profile_image_url
+    def_delegator :user, :profile_banner_url
 
     def description
       handle_none @user.description do
@@ -30,11 +30,11 @@ module TwitterWrapper
     private
 
     def handle_none(value)
-    if value.present?
-      yield
-    else
-      'Description not available.'
+      if value.present?
+        yield
+      else
+        'Description not available.'
+      end
     end
-  end
   end
 end

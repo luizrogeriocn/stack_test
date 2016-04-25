@@ -9,13 +9,11 @@ module TwitterWrapper
     end
 
     def build_user
-      begin
-        TwitterWrapper::User.new(user: fetch_user, tweets: fetch_tweets)
-      rescue Twitter::Error::Unauthorized
-        TwitterWrapper::User.new(user: fetch_user, tweets: [])
-      rescue Twitter::Error::NotFound, Twitter::Error::Forbidden
-        TwitterWrapper::NullUser.new(screen_name)
-      end
+      TwitterWrapper::User.new(user: fetch_user, tweets: fetch_tweets)
+    rescue Twitter::Error::Unauthorized
+      TwitterWrapper::User.new(user: fetch_user, tweets: [])
+    rescue Twitter::Error::NotFound, Twitter::Error::Forbidden
+      TwitterWrapper::NullUser.new(screen_name)
     end
 
     private

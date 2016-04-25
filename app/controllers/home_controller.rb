@@ -9,7 +9,7 @@ class HomeController < ApplicationController
   private
 
   def user
-    @user = Rails.cache.fetch("user_#{user_params}", expires_in: TwitterWrapper::Api::CACHE_EXPIRACY.call) do
+    @user = Rails.cache.fetch("user_#{user_params}", expires_in: 5.minutes) do
       TwitterWrapper::UserFactory.build_user(user_params)
     end
   end
