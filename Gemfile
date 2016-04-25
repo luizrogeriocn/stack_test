@@ -16,6 +16,7 @@ gem 'bitters'
 gem 'neat'
 
 gem 'vcr'
+gem 'webmock'
 gem 'virtus'
 gem "responders"
 gem 'react-rails', '~> 1.6.0'
