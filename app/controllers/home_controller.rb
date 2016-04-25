@@ -14,7 +14,11 @@ class HomeController < ApplicationController
 
   def user
     @user = Rails.cache.fetch("user_#{user_params}", expires_in: TwitterWrapper::Api::CACHE_EXPIRACY.call) do
-      TwitterWrapper::User.new(user: tweets.first.user, tweets: tweets)
+      begin
+        TwitterWrapper::User.new(user: tweets.first.user, tweets: tweets)
+      rescue Twitter::Error::NotFound
+        TwitterWrapper::NullUser.new(user_params)
+      end
     end
   end
 

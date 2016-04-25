@@ -16,14 +16,14 @@ RSpec.describe TwitterWrapper::MessageParser do
       let(:message) { "great user: @stackcommerce" }
       subject(:parsed_message) { message_parser.parse }
 
-      it { is_expected.to eq("great user: <a href='/?screen_name=@stackcommerce'>@stackcommerce</a>") }
+      it { is_expected.to eq("great user: <a href='/stackcommerce'>@stackcommerce</a>") }
     end
 
     context 'message with a link and a mention' do
       let(:message) { "great: @stackcommerce https://www.google.com" }
       subject(:parsed_message) { message_parser.parse }
 
-      it { is_expected.to eq("great: <a href='/?screen_name=@stackcommerce'>@stackcommerce</a> <a href='https://www.google.com' target='_blank'>https://www.google.com</a>") }
+      it { is_expected.to eq("great: <a href='/stackcommerce'>@stackcommerce</a> <a href='https://www.google.com' target='_blank'>https://www.google.com</a>") }
     end
 
     context 'message with no links and no mentions' do
@@ -37,7 +37,7 @@ RSpec.describe TwitterWrapper::MessageParser do
       let(:message) { "@stackcommerce @akitaonrails" }
       subject(:parsed_message) { message_parser.parse }
 
-      it { is_expected.to eq("<a href='/?screen_name=@stackcommerce'>@stackcommerce</a> <a href='/?screen_name=@akitaonrails'>@akitaonrails</a>") }
+      it { is_expected.to eq("<a href='/stackcommerce'>@stackcommerce</a> <a href='/akitaonrails'>@akitaonrails</a>") }
     end
 
     context 'message with multiple links' do
