@@ -23,7 +23,7 @@ module TwitterWrapper
     end
 
     def parse_links
-      @message.gsub!(/https?:\/\/[\S]+/) do |match|
+      @message.gsub!(/(https?:\/\/)[^\s\(\[\{\)\]\}\,\!]+/) do |match|
         "<a href='#{match}' target='_blank'>#{match}</a>"
       end
       @message

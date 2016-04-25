@@ -5,7 +5,7 @@ module TwitterWrapper
     end
 
     def text
-      "'#{@author_name}' doesn't exist.. Yet! Create it and bring it to life at <a href='https://twitter.com/signup?lang=en'>twitter.com</a>"
+      "Seems like we cant get #{@author_name}'s tweets."
     end
 
     def created_at

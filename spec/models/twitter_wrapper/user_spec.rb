@@ -7,7 +7,6 @@ RSpec.describe TwitterWrapper::User do
   let(:twitter_user) { TwitterWrapper::User.new(user: user, tweets: user_timeline) }
 
   it { should delegate_method(:screen_name).to(:user) }
-  it { should delegate_method(:description).to(:user) }
   it { should delegate_method(:followers_count).to(:user) }
   it { should delegate_method(:favourites_count).to(:user) }
   it { should delegate_method(:tweets_count).to(:user) }
