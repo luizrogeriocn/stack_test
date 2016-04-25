@@ -16,7 +16,6 @@ gem 'bitters'
 gem 'neat'
 
 gem 'vcr'
-gem 'webmock'
 gem 'virtus'
 gem "responders"
 gem 'react-rails', '~> 1.6.0'
@@ -25,6 +24,7 @@ gem 'puma'
 gem 'devise'
 
 gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'webmock', group: :test
 
 group :development, :test do
   gem 'byebug'
