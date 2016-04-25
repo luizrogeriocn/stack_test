@@ -25,7 +25,7 @@ var SearchForm = React.createClass({
             onChange={this.handleAuthorChange}
           />
           <button type="submit">
-            <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/search-icon-black.png" alt="Search Icon" />
+            <RefillIcon name="search-icon-black" alt="Search Icon" />
           </button>
         </form>
       </section>
