@@ -1,7 +1,7 @@
 module TwitterWrapper
   class UserFactory
-    def self.build_user(screen_name)
-      new(screen_name).build_user
+    def self.build_user(*args)
+      new(*args).build_user
     end
 
     def initialize(screen_name)
@@ -19,6 +19,10 @@ module TwitterWrapper
     private
     attr_reader :screen_name
 
+    def fetch_user
+      @user_from_twitter ||= twitter_wrapper.user(screen_name)
+    end
+
     def twitter_wrapper
       @twitter_wrapper ||= TwitterWrapper::Api.new(TwitterWrapper::Client.build)
     end
@@ -26,12 +30,5 @@ module TwitterWrapper
     def fetch_tweets
       @tweets_from_twitter ||= twitter_wrapper.user_timeline(screen_name)
     end
-
-    def fetch_user
-      @user_from_twitter ||= twitter_wrapper.user(screen_name)
-    end
   end
 end
-
-
-
