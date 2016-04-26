@@ -16,7 +16,7 @@ There were some challenges along the way, e.g., searches for nonexistent and pri
 
 > **Possible Improvements:**
 - Inject MessageParser into Tweet as a dependency. Besides the testability improvement, it would be easier to inject a custom parser for NullTweets handling.
-- Some tests are not very descriptive.
+- Some specs are not very descriptive and test coverage is not top-notch.
 - Add Integration tests to make sure everything is working together.
 
 Usage of the [Twitter gem][1] has been limited only to match the application needs, so there is a wrapper for the API communication. The Twitter Client itself is injected as a dependency for the API wrapper, which makes it easier to test.
