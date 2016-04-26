@@ -3,7 +3,10 @@ var UserInfo = React.createClass({
     return (
       <section>
         <UserBanner image={this.props.data.banner}>
-          <h4>{this.props.data.screen_name}</h4>
+          <div>
+            <img src={this.props.data.profile_image}/>
+            <h4>{this.props.data.screen_name}</h4>
+          </div>
           <p>{this.props.data.description}</p>
         </UserBanner>
 
