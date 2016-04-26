@@ -1,20 +1,17 @@
 module TwitterWrapper
   class Tweet
-    include Virtus.model
+    extend Forwardable
+    def_delegator :@tweet, :created_at
+    def_delegator :@tweet, :id
+    def_delegator :@tweet, :user
+    def_delegator :@tweet, :retweet?
+    def_delegator :@tweet, :text
 
     def initialize(tweet)
       @tweet = tweet
     end
 
-    def created_at
-      original_tweet.created_at
-    end
-
-    def id
-      original_tweet.id
-    end
-
-    def profile_image
+    def big_profile_image
       original_tweet.user.profile_image_url.to_s.sub("_normal", "")
     end
 
@@ -22,24 +19,16 @@ module TwitterWrapper
       original_tweet.user.screen_name
     end
 
-    def retweeted?
-      tweet.retweet?
-    end
-
-    def text
-      TwitterWrapper::MessageParser.parse(message)
+    # WARNING: Use DI
+    def message
+      TwitterWrapper::MessageParser.parse(text)
     end
 
     private
-
-    def message
-      original_tweet.text.dup
-    end
+    attr_reader :tweet
 
     def original_tweet
       @original_tweet ||= @tweet.retweet? ? @tweet.retweeted_tweet : tweet
     end
-
-    attr_reader :tweet
   end
 end

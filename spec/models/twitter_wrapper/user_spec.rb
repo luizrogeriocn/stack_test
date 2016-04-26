@@ -6,54 +6,56 @@ RSpec.describe TwitterWrapper::User do
   let(:user) { VCR.use_cassette(cassete_user) { api.user(screen_name) } }
   let(:twitter_user) { TwitterWrapper::User.new(user: user, tweets: user_timeline) }
 
-  it { should delegate_method(:screen_name).to(:user) }
-  it { should delegate_method(:followers_count).to(:user) }
-  it { should delegate_method(:favourites_count).to(:user) }
-  it { should delegate_method(:tweets_count).to(:user) }
-  it { should delegate_method(:profile_image_url).to(:user) }
-  it { should delegate_method(:profile_banner_url).to(:user) }
+  describe 'delegations' do
+    let(:cassete_user) { "luizrogeriocn" }
+    let(:cassete_timeline) { "luizrogeriocn_timeline" }
+    let(:screen_name) { "luizrogeriocn" }
+    subject(:delegations) { twitter_user }
 
-  describe '#profile_image_url' do
-    context 'for an existing user'
-      context 'with profile picture' do
-        let(:cassete_user) { "luizrogeriocn" }
-        let(:cassete_timeline) { "luizrogeriocn_timeline" }
-        let(:screen_name) { "luizrogeriocn" }
-        subject(:url) { twitter_user.profile_image_url }
-
-        it { is_expected.to match(/normal/) }
-      end
-
-      context 'with no profile picture' do
-        let(:cassete_user) { "ana_azedo" }
-        let(:cassete_timeline) { "ana_azedo_timeline" }
-        let(:screen_name) { "ana_azedo" }
-        subject(:url) { twitter_user.profile_image_url }
-
-        it { is_expected.to match(/\/default_profile_images\//) }
-      end
+    it { should delegate_method(:screen_name).to(:user) }
+    it { should delegate_method(:followers_count).to(:user) }
+    it { should delegate_method(:favourites_count).to(:user) }
+    it { should delegate_method(:tweets_count).to(:user) }
+    it { should delegate_method(:profile_image_url).to(:user) }
+    it { should delegate_method(:profile_banner_url).to(:user) }
   end
 
-  describe '#profile_image' do
-    context 'for an existing user'
-      context 'with profile picutre' do
-        let(:cassete_user) { "luizrogeriocn" }
-        let(:cassete_timeline) { "luizrogeriocn_timeline" }
-        let(:screen_name) { "luizrogeriocn" }
-        subject(:url) { twitter_user.profile_image }
+  context 'for an user with no nil attributes' do
+    let(:cassete_user) { "luizrogeriocn" }
+    let(:cassete_timeline) { "luizrogeriocn_timeline" }
+    let(:screen_name) { "luizrogeriocn" }
 
-        it { is_expected.not_to match(/normal/) }
-      end
+    describe '#description' do
+      subject(:description) { twitter_user.description }
 
-      context 'with no profile picture' do
-        let(:cassete_user) { "ana_azedo" }
-        let(:cassete_timeline) { "ana_azedo_timeline" }
-        let(:screen_name) { "ana_azedo" }
+      it { is_expected.to be_present }
+    end
 
-        subject(:url) { twitter_user.profile_image }
+    describe '#profile_image' do
+      subject(:url) { twitter_user.profile_image }
 
-        it { is_expected.not_to match(/normal/) }
-      end
+      it { is_expected.not_to match(/normal/) }
+    end
+
+    describe '#profile_banner' do
+      subject(:url) { twitter_user.profile_banner }
+
+      it { is_expected.not_to match(/normal/) }
+    end
+
+    describe '#tweets' do
+      subject(:tweets) { twitter_user.profile_banner }
+
+      it { is_expected.not_to be_empty }
+    end
   end
+  # context 'with no profile picture' do
+  #   let(:cassete_user) { "ana_azedo" }
+  #   let(:cassete_timeline) { "ana_azedo_timeline" }
+  #   let(:screen_name) { "ana_azedo" }
 
+  #   subject(:url) { twitter_user.profile_image }
+
+  #   it { is_expected.not_to match(/normal/) }
+  # end
 end

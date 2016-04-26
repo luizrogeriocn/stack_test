@@ -1,22 +1,27 @@
 module TwitterWrapper
   class User
     extend Forwardable
-    include Virtus.model
+    attr_reader :tweets
 
-    attribute :tweets, Array[TwitterWrapper::Tweet]
-    attribute :user, Twitter::User
+    DELEGATE_METHODS = [
+      :screen_name,
+      :followers_count,
+      :favourites_count,
+      :tweets_count,
+      :profile_image_url,
+      :profile_banner_url
+    ]
 
-    def_delegator :user, :screen_name
-    def_delegator :user, :followers_count
-    def_delegator :user, :favourites_count
-    def_delegator :user, :tweets_count
-    def_delegator :user, :profile_image_url
-    def_delegator :user, :profile_banner_url
+    delegate DELEGATE_METHODS => :user
+
+    def initialize(user:, tweets:)
+      @user = user
+      @tweets = map_tweets(tweets)
+    end
 
     def description
-      handle_none @user.description do
-        @user.description
-      end
+      return 'No description' unless user.description.present?
+      user.description
     end
 
     def profile_image
@@ -24,27 +29,24 @@ module TwitterWrapper
     end
 
     def profile_banner
-      profile_banner_url ? original_banner : default_banner
+      profile_banner_url ? big_banner : no_banner
     end
 
     private
 
-    def original_banner
+    def big_banner
       profile_banner_url.to_s.sub("_normal", "")
     end
 
-    def default_banner
+    def no_banner
       "http://publishersconvention.com/wp-content/uploads/2014/12/colorful-triangles-background-800x300.jpg"
     end
 
     private
+    attr_reader :user
 
-    def handle_none(value)
-      if value.present?
-        yield
-      else
-        'Description not availale'
-      end
+    def map_tweets(tweets)
+      tweets.map{ |t| TwitterWrapper::Tweet.new(t) }
     end
   end
 end

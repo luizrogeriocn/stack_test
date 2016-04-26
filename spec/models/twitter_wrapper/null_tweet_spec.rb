@@ -10,8 +10,8 @@ RSpec.describe TwitterWrapper::NullTweet do
     it { is_expected.to be_a(DateTime) }
   end
 
-  describe '#text' do
-    subject(:text) { null_tweet.text }
+  describe '#message' do
+    subject(:message) { null_tweet.message }
 
     it { is_expected.to match(screen_name) }
   end

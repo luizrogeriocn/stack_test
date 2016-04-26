@@ -8,9 +8,9 @@ json.profile_image @user.profile_image
 
 json.tweets @user.tweets do |tweet|
   json.author tweet.author
-  json.text tweet.text
+  json.text tweet.message
   json.created_at time_ago_in_words(tweet.created_at)
   json.id tweet.id
-  json.image tweet.profile_image
-  json.is_retweet tweet.retweeted?
+  json.image tweet.big_profile_image
+  json.is_retweet tweet.retweet?
 end

@@ -1,7 +1,7 @@
 module TwitterWrapper
   class MessageParser
     def self.parse(message)
-      new(message).parse
+      new(message.dup).parse
     end
 
     def initialize(message)
