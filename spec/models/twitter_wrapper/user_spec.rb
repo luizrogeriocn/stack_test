@@ -34,13 +34,13 @@ RSpec.describe TwitterWrapper::User do
       end
   end
 
-  describe '#original_profile_image' do
+  describe '#profile_image' do
     context 'for an existing user'
       context 'with profile picutre' do
         let(:cassete_user) { "luizrogeriocn" }
         let(:cassete_timeline) { "luizrogeriocn_timeline" }
         let(:screen_name) { "luizrogeriocn" }
-        subject(:url) { twitter_user.original_profile_image }
+        subject(:url) { twitter_user.profile_image }
 
         it { is_expected.not_to match(/normal/) }
       end
@@ -50,7 +50,7 @@ RSpec.describe TwitterWrapper::User do
         let(:cassete_timeline) { "ana_azedo_timeline" }
         let(:screen_name) { "ana_azedo" }
 
-        subject(:url) { twitter_user.original_profile_image }
+        subject(:url) { twitter_user.profile_image }
 
         it { is_expected.not_to match(/normal/) }
       end

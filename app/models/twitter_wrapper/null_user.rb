@@ -12,11 +12,11 @@ module TwitterWrapper
       0
     end
 
-    def original_profile_banner
+    def profile_banner
       "http://publishersconvention.com/wp-content/uploads/2014/12/colorful-triangles-background-800x300.jpg"
     end
 
-    def original_profile_image
+    def profile_image
       "https://abs.twimg.com/sticky/default_profile_images/default_profile_1_normal.png"
     end
 

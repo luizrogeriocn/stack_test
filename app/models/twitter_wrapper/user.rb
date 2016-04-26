@@ -19,12 +19,22 @@ module TwitterWrapper
       end
     end
 
-    def original_profile_image
+    def profile_image
       profile_image_url.to_s.sub("_normal", "")
     end
 
-    def original_profile_banner
+    def profile_banner
+      profile_banner_url ? original_banner : default_banner
+    end
+
+    private
+
+    def original_banner
       profile_banner_url.to_s.sub("_normal", "")
+    end
+
+    def default_banner
+      "http://publishersconvention.com/wp-content/uploads/2014/12/colorful-triangles-background-800x300.jpg"
     end
 
     private
@@ -33,7 +43,7 @@ module TwitterWrapper
       if value.present?
         yield
       else
-        'Description not available.'
+        'Description not availale'
       end
     end
   end

@@ -16,14 +16,14 @@ RSpec.describe TwitterWrapper::NullUser do
     it { is_expected.to eq(0) }
   end
 
-  describe '#original_profile_banner' do
-    subject(:banner_url) { null_user.original_profile_banner }
+  describe '#profile_banner' do
+    subject(:banner_url) { null_user.profile_banner }
 
     it { is_expected.to eq("http://publishersconvention.com/wp-content/uploads/2014/12/colorful-triangles-background-800x300.jpg") }
   end
 
-  describe '#original_profile_image' do
-    subject(:image_url) { null_user.original_profile_image }
+  describe '#profile_image' do
+    subject(:image_url) { null_user.profile_image }
 
     it { is_expected.to eq("https://abs.twimg.com/sticky/default_profile_images/default_profile_1_normal.png") }
   end
