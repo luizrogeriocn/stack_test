@@ -14,6 +14,7 @@ gem 'twitter'
 gem 'bourbon'
 gem 'bitters'
 gem 'neat'
+gem "font-awesome-rails"
 
 gem 'vcr'
 gem 'virtus'

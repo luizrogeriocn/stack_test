@@ -16,7 +16,6 @@ There were some challenges along the way, e.g., searches for nonexistent and pri
 
 > **Possible Improvements:**
 - Inject MessageParser into Tweet as a dependency. Besides the testability improvement, it would be easier to inject a custom parser for NullTweets handling.
-- Show original tweet message for retweets.
 - Some tests are not very descriptive.
 - Add Integration tests to make sure everything is working together.
 

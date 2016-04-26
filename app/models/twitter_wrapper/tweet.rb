@@ -4,15 +4,26 @@ module TwitterWrapper
 
     def initialize(tweet)
       @tweet = tweet
-      @message = tweet.text.dup
     end
 
     def created_at
-      tweet.created_at
+      original_tweet.created_at
     end
 
     def id
-      tweet.id
+      original_tweet.id
+    end
+
+    def profile_image
+      original_tweet.user.profile_image_url.to_s.sub("_normal", "")
+    end
+
+    def author
+      original_tweet.user.screen_name
+    end
+
+    def retweeted?
+      tweet.retweet?
     end
 
     def text
@@ -21,6 +32,14 @@ module TwitterWrapper
 
     private
 
-    attr_reader :tweet, :message
+    def message
+      original_tweet.text.dup
+    end
+
+    def original_tweet
+      @original_tweet ||= @tweet.retweet? ? @tweet.retweeted_tweet : tweet
+    end
+
+    attr_reader :tweet
   end
 end
